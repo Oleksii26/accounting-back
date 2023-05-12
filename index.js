@@ -6,7 +6,6 @@ import { create } from './controllers/create.js'
 import { remove } from './controllers/remove.js'
 import { v2 as cloudinary } from 'cloudinary'
 import fileUpload from 'express-fileupload'
-import { v4 as uuidv4 } from 'uuid'
 
 const PORT = 3002
 
@@ -32,7 +31,7 @@ app.post('/create', create)
 app.delete('/doc/:id', remove)
 app.post('/upload', async (req, res) => {
     try {
-        const file = req.files.undefined
+        const file = req.files.image
         const result = await cloudinary.uploader.upload(file.tempFilePath, {
             public_id: `${new Date()}`,
             resource_type: 'auto',
