@@ -6,7 +6,7 @@ export const DocShema = new mongoose.Schema({
         required: true,
     },
     datum: {
-        type: Number, 
+        type: String,
         required: true,
     },
     doc: {
@@ -15,6 +15,6 @@ export const DocShema = new mongoose.Schema({
     },
     name: String,
 
-}, { timestamps: true })
+}, { timestamps: true }) 
 
 export default mongoose.model('Doc', DocShema)
